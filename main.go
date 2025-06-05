@@ -2,8 +2,6 @@ package main
 
 import "fmt"
 
-// import "bufio"
-
 func romanToInt(s string) int {
 	var number uint16 = 0
 	var lenght int
@@ -70,10 +68,27 @@ func romanToInt(s string) int {
 func main() {
 
 	var text string
-	// fmt.Scan(&text)
+	var first_num, second_num int
 	// fmt.Println(romanToInt(text))
 
-	fmt.Println("Как тебя зовут?")
+	fmt.Println("Как тебя зовут?") // Запрашиваем имя пользователя
 	fmt.Scan(&text)
 	fmt.Println("Привет,", text)
+
+	fmt.Print("Введите 2 целых числа через пробел:") // Запрашиваем 2 числа
+	fmt.Scan(&first_num, &second_num)
+
+	fmt.Println("Сумма: ", first_num+second_num)        // Выводим сумму чисел
+	fmt.Println("Разность: ", first_num-second_num)     // Выводим разность чисел
+	fmt.Println("Произведение: ", first_num*second_num) // Выводим произведение чисел
+
+	//	Проверяем не равно ли 2 число нулю
+	if second_num != 0 {
+		var first_num_dev float32 = float32(first_num)
+		var second_num_dev float32 = float32(second_num)
+
+		fmt.Println("Частное: ", (first_num_dev / second_num_dev))
+	} else {
+		fmt.Println("Делить на ноль нельзя")
+	}
 }
